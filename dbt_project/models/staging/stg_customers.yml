@@ -1,0 +1,14 @@
+# Documente le modèle stg_customers (qui renomme 2 colonnes)
+
+version: 2
+
+models:
+  - name: stg_customers
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+      - name: customer_name
+        tests:
+          - not_null
