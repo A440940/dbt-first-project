@@ -4,20 +4,25 @@ version: 2
 
 models:
   - name: stg_orders
+    description: Order data with basic cleaning and transformation applied.
     columns:
       - name: order_id
+        description: The unique key for each order.
         tests:
           - unique
           - not_null
       - name: customer_id
+        description: The unique key for each customer.
         tests:
           - not_null
           - relationships: # vérifie qu'aucune valeur de customer_id dans stg_orders ne pointe vers une valeur inexistante dans stg_customers
               to: ref('stg_customers')
               field: customer_id
       - name: order_date
+        description: The date that a customer has completed the transaction and made a purchase.
         tests:
           - not_null
       - name: store_id
+        description: "{{ doc('store_id_description') }}"
         tests:
           - not_null

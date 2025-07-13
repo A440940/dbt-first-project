@@ -5,7 +5,10 @@ version: 2 # version de la spécification YAML utilisée
 sources: # section contenant les sources de données
   - name: my_dbt_db # nom de la source de données
     schema: my_dbt_db # nom du schéma où sont stockées les tables brutes
+    description: E-commerce data for the Jaffle Shop
 
     tables: # liste des tables brutes référencées dans vos modèle
       - name: raw_customers # nom de la table brute
+        description: One record per person who has purchased one or more items
       - name: raw_orders
+        description: One record per order
