@@ -1,4 +1,4 @@
-# Documente le modèle stg_orders (qui renomme 1 colonne)
+# Documente le modèle stg_orders
 
 version: 2
 
@@ -6,6 +6,18 @@ models:
   - name: stg_orders
     columns:
       - name: order_id
+        tests:
+          - unique
+          - not_null
       - name: customer_id
+        tests:
+          - not_null
+          - relationships: # vérifie qu'aucune valeur de customer_id dans stg_orders ne pointe vers une valeur inexistante dans stg_customers
+              to: ref('stg_customers')
+              field: customer_id
       - name: order_date
+        tests:
+          - not_null
       - name: store_id
+        tests:
+          - not_null
