@@ -1,0 +1,8 @@
+# Documente le modèle stg_orders (qui renomme 1 colonne)
+
+version: 2
+
+models:
+  - name: stg_orders
+    columns:
+      - name: customer_id

@@ -1,10 +1,11 @@
 # Partie Staging : dédiée à la préparation des données (nettoyage, normalisation, et mise en forme avant utilisation dans les modèles finaux.)
 
-version: 2
+version: 2 # version de la spécification YAML utilisée
 
-sources:
-  - name: my_dbt_db
-    schema: my_dbt_db
+sources: # section contenant les sources de données
+  - name: my_dbt_db # nom de la source de données
+    schema: my_dbt_db # nom du schéma où sont stockées les tables brutes
 
-    tables:
-      - name: raw_customers
+    tables: # liste des tables brutes référencées dans vos modèle
+      - name: raw_customers # nom de la table brute
+      - name: raw_orders
