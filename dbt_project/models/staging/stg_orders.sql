@@ -3,7 +3,10 @@ with source as (
 ),
 renamed as (
     select
-        id as customer_id
+        id as order_id,
+        customer as customer_id,
+        ordered_at as order_date,
+        store_id
     from source
 )
 select * from renamed
