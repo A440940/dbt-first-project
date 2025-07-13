@@ -1,0 +1,10 @@
+# Partie Staging : dédiée à la préparation des données (nettoyage, normalisation, et mise en forme avant utilisation dans les modèles finaux.)
+
+version: 2
+
+sources:
+  - name: my_dbt_db
+    schema: my_dbt_db
+
+    tables:
+      - name: raw_customers
